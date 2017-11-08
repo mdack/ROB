@@ -1,0 +1,25 @@
+/*
+* Problema 1
+*/
+
+//a) Pseudocódigo
+
+function hanoi(discos, torre_ini, temp, torre_fin){
+	if discos = 1
+		muestra movimiento de torre inicial a final (vector de estado)
+	else
+		hanoi(discos-1, torre_ini, torre_fin, temp);
+		hanoi(1, torre_ini, temp, torre_fin);
+		hanoi(discos-1, temp, torre_ini, torre_fin);
+}
+
+//b)
+function [] = hanoi(nDiscos,init,temp,fin)
+	if nDiscos == 1
+		disp([init ' hacia ' fin]);
+    else
+		hanoi(nDiscos-1,init,fin,temp);
+		hanoi(1, init, temp,fin);
+		hanoi(nDiscos-1,temp,init,fin);
+    end
+end
